@@ -36,9 +36,9 @@ public class Tracker {
     public Item[] findByName(String key) {
         Item[] itemsSameNames = new Item[items.length];
         int size = 0;
-        for (int index = 0; index <= size; index++) {
+        for (int index = 0; index < this.size; index++) {
             Item item = items[index];
-            if (item != null && item.getName().equals(key)) {
+            if (item.getName().equals(key)) {
                 itemsSameNames[size] = item;
                 size++;
             }
@@ -47,15 +47,7 @@ public class Tracker {
     }
 
     public Item[] findAll(Item[] items) {
-        Item[] itemsCutNull = new Item[items.length];
-        int size = 0;
-        for (Item item : items) {
-            if (item != null) {
-                itemsCutNull[size] = item;
-                size++;
-            }
-        }
-        return Arrays.copyOf(itemsCutNull, size);
+        return Arrays.copyOf(items, size);
     }
 
     public boolean replace(String id, Item item) {
