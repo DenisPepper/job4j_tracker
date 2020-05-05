@@ -38,8 +38,7 @@ public class Tracker {
                 size++;
             }
         }
-        itemsSameNames = Arrays.copyOf(itemsSameNames, size);
-        return itemsSameNames;
+        return Arrays.copyOf(itemsSameNames, size);
     }
 
     public Item[] findAll(Item[] items) {
@@ -51,7 +50,6 @@ public class Tracker {
                 size++;
             }
         }
-        itemsCutNull = Arrays.copyOf(itemsCutNull, size);
-        return itemsCutNull;
+        return Arrays.copyOf(itemsCutNull, size);
     }
 }

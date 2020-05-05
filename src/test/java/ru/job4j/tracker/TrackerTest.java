@@ -18,12 +18,18 @@ public class TrackerTest {
     @Test
     public void findByName() {
         Tracker tracker = new Tracker();
-        Item firstItem = new Item("test1");
-        tracker.add(firstItem);
-        Item secondItem = new Item("test1");
-        tracker.add(secondItem);
-        Item[] items = {firstItem, secondItem};
+
+        Item Item1 = new Item("test1");
+        Item Item2 = new Item("test1");
+        Item Item3 = new Item("test1");
+
+        tracker.add(Item1);
+        tracker.add(Item2);
+        tracker.add(Item3);
+
+        Item[] items = {Item1, Item2, Item3};
         Item[] result = tracker.findByName("test1");
+
         assertThat(result, is(items));
     }
 
