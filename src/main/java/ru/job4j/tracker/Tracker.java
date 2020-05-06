@@ -46,8 +46,8 @@ public class Tracker {
         return Arrays.copyOf(itemsSameNames, size);
     }
 
-    public Item[] findAll(Item[] items) {
-        return Arrays.copyOf(items, size);
+    public Item[] findAll() {
+        return Arrays.copyOf(this.items, size);
     }
 
     public boolean replace(String id, Item item) {

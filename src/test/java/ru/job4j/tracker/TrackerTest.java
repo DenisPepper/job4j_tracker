@@ -43,8 +43,7 @@ public class TrackerTest {
         Item secondItem = new Item("test1");
         tracker.add(secondItem);
         Item[] items = {firstItem, secondItem};
-        Item[] itemsWithNull = {firstItem, null, secondItem};
-        Item[] result = tracker.findAll(itemsWithNull);
+        Item[] result = tracker.findAll();
         assertThat(result, is(items));
     }
 
