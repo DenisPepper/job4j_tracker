@@ -52,22 +52,22 @@ public class Tracker {
 
     public boolean replace(String id, Item item) {
         int index = indexOf(id);
-        boolean IsValid = index != -1;
-        if (IsValid) {
+        boolean isValid = index != -1;
+        if (isValid) {
             item.setId(id);
             items[index] = item;
         }
-        return IsValid;
+        return isValid;
     }
 
     public boolean delete(String id) {
         int index = indexOf(id);
-        boolean IsValid = index != -1;
-        if (IsValid) {
+        boolean isValid = index != -1;
+        if (isValid) {
             System.arraycopy(items, index + 1, items, index, size - index);
             items[size - 1] = null;
             size--;
         }
-        return IsValid;
+        return isValid;
     }
 }

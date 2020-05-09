@@ -2,7 +2,7 @@ package ru.job4j.tracker;
 
 public class StartUI {
 
-    public void init( Input input, Tracker tracker) {
+    public void init(Input input, Tracker tracker) {
         boolean run = true;
         while (run) {
             this.showMenu();
@@ -97,7 +97,7 @@ public class StartUI {
     public static void renameItem(Input input, Tracker tracker) {
         String id = input.askStr("Enter id: ");
         Item item = new Item(input.askStr("Enter new name: "));
-        if (tracker.replace(id,item)) {
+        if (tracker.replace(id, item)) {
             System.out.print(" Replace well done ...");
         } else {
             System.out.print(" Replace error! Try again ...");
