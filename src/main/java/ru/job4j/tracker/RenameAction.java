@@ -11,7 +11,8 @@ public class RenameAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        showMethodHeader();
+        System.out.println();
+        System.out.println(" Rename item ... ");
         String id = input.askStr("Enter id: ");
         Item item = new Item(input.askStr("Enter new name: "));
         if (tracker.replace(id, item)) {
@@ -20,10 +21,5 @@ public class RenameAction implements UserAction {
             System.out.print(" Rename error! Try again ...");
         }
         return true;
-    }
-
-    private void showMethodHeader() {
-        System.out.println();
-        System.out.println(" Rename item ... ");
     }
 }

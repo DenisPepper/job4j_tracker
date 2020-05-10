@@ -11,17 +11,13 @@ public class DeleteAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        showMethodHeader();
+        System.out.println();
+        System.out.println(" Delete item ... ");
         if (tracker.delete(input.askStr("Enter id: "))) {
             System.out.print(" Delete well done ...");
         } else {
             System.out.print(" Delete error! Try again ...");
         }
         return true;
-    }
-
-    private void showMethodHeader() {
-        System.out.println();
-        System.out.println(" Delete item ... ");
     }
 }
