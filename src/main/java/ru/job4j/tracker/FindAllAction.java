@@ -13,6 +13,7 @@ public class FindAllAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
+        showMethodHeader();
         Item[] items = tracker.findAll();
         if (items.length == 0) {
             System.out.println("is empty ...");
@@ -22,5 +23,10 @@ public class FindAllAction implements UserAction {
             }
         }
         return true;
+    }
+
+    private void showMethodHeader() {
+        System.out.println();
+        System.out.println(" The list of all items: ");
     }
 }

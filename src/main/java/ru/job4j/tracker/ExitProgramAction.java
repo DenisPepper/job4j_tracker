@@ -13,6 +13,12 @@ public class ExitProgramAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
+        showMethodHeader();
         return false;
+    }
+
+    private void showMethodHeader() {
+        System.out.println();
+        System.out.println(" Exit ... ");
     }
 }

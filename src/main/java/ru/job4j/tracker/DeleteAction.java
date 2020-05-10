@@ -13,6 +13,7 @@ public class DeleteAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
+        showMethodHeader();
         if (tracker.delete(input.askStr("Enter id: "))) {
             System.out.print(" Delete well done ...");
         } else {
@@ -21,4 +22,8 @@ public class DeleteAction implements UserAction {
         return true;
     }
 
+    private void showMethodHeader() {
+        System.out.println();
+        System.out.println(" Delete item ... ");
+    }
 }
