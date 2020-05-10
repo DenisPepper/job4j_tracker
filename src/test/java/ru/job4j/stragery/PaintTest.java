@@ -35,7 +35,6 @@ public class PaintTest {
         pic.add("+++++++");
         pic.add("");
         assertThat(this.out.toString(), is(pic.toString()));
-        System.setOut(stdout); // возвращаем обратно стандартный вывод в консоль.
     }
 
     @Test
@@ -48,6 +47,5 @@ public class PaintTest {
         pic.add("+++++++++");
         pic.add("");
         assertThat(this.out.toString(), is(pic.toString()));
-        System.setOut(stdout); // возвращаем обратно стандартный вывод в консоль.
     }
 }
