@@ -6,9 +6,7 @@ public class ExitProgramAction implements UserAction {
 
     @Override
     public String showMenuHeader() {
-        StringJoiner pic = new StringJoiner(System.lineSeparator());
-        pic.add("Exit Program");
-        return pic.toString();
+        return "Exit Program";
     }
 
     @Override

@@ -6,9 +6,7 @@ public class CreateAction implements UserAction {
 
     @Override
     public String showMenuHeader() {
-        StringJoiner pic = new StringJoiner(System.lineSeparator());
-        pic.add("Add new Item");
-        return pic.toString();
+        return "Add new Item";
     }
 
     @Override

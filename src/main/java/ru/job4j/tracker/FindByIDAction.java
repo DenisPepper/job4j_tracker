@@ -6,9 +6,7 @@ public class FindByIDAction implements UserAction {
 
     @Override
     public String showMenuHeader() {
-        StringJoiner pic = new StringJoiner(System.lineSeparator());
-        pic.add("Find item by Id");
-        return pic.toString();
+        return "Find item by Id";
     }
 
     @Override

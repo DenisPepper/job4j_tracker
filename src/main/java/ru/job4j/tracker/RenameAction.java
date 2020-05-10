@@ -6,9 +6,7 @@ public class RenameAction implements UserAction {
 
     @Override
     public String showMenuHeader() {
-        StringJoiner pic = new StringJoiner(System.lineSeparator());
-        pic.add("Rename item");
-        return pic.toString();
+        return "Rename item";
     }
 
     @Override

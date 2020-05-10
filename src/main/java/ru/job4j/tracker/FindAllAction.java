@@ -6,9 +6,7 @@ public class FindAllAction implements UserAction {
 
     @Override
     public String showMenuHeader() {
-        StringJoiner pic = new StringJoiner(System.lineSeparator());
-        pic.add("Find all items");
-        return pic.toString();
+        return "Find all items";
     }
 
     @Override

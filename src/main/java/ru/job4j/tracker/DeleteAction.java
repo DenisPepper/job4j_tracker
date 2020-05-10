@@ -6,9 +6,7 @@ public class DeleteAction implements UserAction {
 
     @Override
     public String showMenuHeader() {
-        StringJoiner pic = new StringJoiner(System.lineSeparator());
-        pic.add("Delete item");
-        return pic.toString();
+        return "Delete item";
     }
 
     @Override

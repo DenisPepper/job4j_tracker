@@ -6,9 +6,7 @@ public class FindByNameAction implements UserAction {
 
     @Override
     public String showMenuHeader() {
-        StringJoiner pic = new StringJoiner(System.lineSeparator());
-        pic.add("Find items by name");
-        return pic.toString();
+        return "Find items by name";
     }
 
     @Override
