@@ -1,5 +1,11 @@
 package ru.job4j.tracker;
 
+/**
+ * StubInput
+ * класс имитирует консольный ввод пользователя
+ *
+ */
+
 public class StubInput implements Input {
     private String[] answers;
     private int position = 0;
