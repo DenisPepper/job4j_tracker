@@ -9,20 +9,27 @@ import java.util.StringJoiner;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
+/**
+ *
+ * 1. Класс PrintStream — общее назначение - вывод информации в какой-то поток.
+ *
+ * 2. Класс ByteArrayOutputStream — это поток вывода в массив байтов в качестве места вывода.
+ *
+ *
+ */
+
 public class PaintTest {
-    private final PrintStream stdout = System.out; // поле содержит дефолтный вывод в консоль.
-    private final ByteArrayOutputStream out = new ByteArrayOutputStream(); // буфер для результата.
+    private final PrintStream defaultOut = System.out; // поле содержит дефолтный вывод в консоль.
+    private final ByteArrayOutputStream byteArrayOut = new ByteArrayOutputStream(); // буфер для результата.
 
     @Before
     public void loadOutput() {
-        System.out.println("execute before method");
-        System.setOut(new PrintStream(this.out));
+        System.setOut(new PrintStream(this.byteArrayOut));
     }
 
     @After
     public void backOutput() {
-        System.setOut(this.stdout);
-        System.out.println("execute after method");
+        System.setOut(this.defaultOut);
     }
 
     @Test
@@ -34,7 +41,7 @@ public class PaintTest {
         pic.add("+     +");
         pic.add("+++++++");
         pic.add("");
-        assertThat(this.out.toString(), is(pic.toString()));
+        assertThat(this.byteArrayOut.toString(), is(pic.toString()));
     }
 
     @Test
@@ -46,6 +53,6 @@ public class PaintTest {
         pic.add(" +     +");
         pic.add("+++++++++");
         pic.add("");
-        assertThat(this.out.toString(), is(pic.toString()));
+        assertThat(this.byteArrayOut.toString(), is(pic.toString()));
     }
 }
