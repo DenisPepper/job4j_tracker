@@ -25,19 +25,16 @@ public class StartUITest {
         ByteArrayOutputStream byteArrayOut = new ByteArrayOutputStream();
         System.setOut(new PrintStream(byteArrayOut));
 
-        // вызов метода showMenu
         StubInput input = new StubInput(new String[] {"0"}); // 0 - индекс элемента в массиве действий
         StubAction action = new StubAction();
         new StartUI().init(input, new Tracker(), new UserAction[] {action});
 
-        // печать меню
         StringJoiner pic = new StringJoiner(System.lineSeparator());
         pic.add("");
         pic.add("Menu.");
         pic.add("0. Stub action");
         pic.add("");
 
-        // сравнение
         assertThat(byteArrayOut.toString(), is(pic.toString()));
 
         System.setOut(defaultOut);
