@@ -20,7 +20,7 @@ import static org.junit.Assert.assertThat;
 
 public class PaintTest {
     private final PrintStream defaultOut = System.out; // поле содержит дефолтный вывод в консоль.
-    private final ByteArrayOutputStream byteArrayOut = new ByteArrayOutputStream(); // буфер для результата.
+    private final ByteArrayOutputStream byteArrayOut = new ByteArrayOutputStream(); // поле содержит поток вывода в массив байтов в качестве места вывода
 
     @Before
     public void loadOutput() {
@@ -35,24 +35,28 @@ public class PaintTest {
     @Test
     public void whenDrawSquare() {
         new Paint().draw(new Square()); // выполняем действия пишушиее в консоль.
+
         StringJoiner pic = new StringJoiner(System.lineSeparator());
         pic.add("+++++++");
         pic.add("+     +");
         pic.add("+     +");
         pic.add("+++++++");
         pic.add("");
+
         assertThat(this.byteArrayOut.toString(), is(pic.toString()));
     }
 
     @Test
     public void whenDrawTriangle() {
         new Paint().draw(new Triangle()); // выполняем действия пишушиее в консоль.
+
         StringJoiner pic = new StringJoiner(System.lineSeparator());
         pic.add("    +  ");
         pic.add("  +   +");
         pic.add(" +     +");
         pic.add("+++++++++");
         pic.add("");
+
         assertThat(this.byteArrayOut.toString(), is(pic.toString()));
     }
 }
