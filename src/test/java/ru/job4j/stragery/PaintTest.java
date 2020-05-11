@@ -10,12 +10,9 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 /**
- *
  * 1. Класс PrintStream — общее назначение - вывод информации в какой-то поток.
  *
  * 2. Класс ByteArrayOutputStream — это поток вывода в массив байтов в качестве места вывода.
- *
- *
  */
 
 public class PaintTest {
