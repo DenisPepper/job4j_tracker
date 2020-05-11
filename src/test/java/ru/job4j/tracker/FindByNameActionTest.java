@@ -7,7 +7,7 @@ import java.util.StringJoiner;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
-public class FindAllActionTest {
+public class FindByNameActionTest {
 
     @Test
     public void whenCheckOutput() {
@@ -17,18 +17,18 @@ public class FindAllActionTest {
 
         StringJoiner expected = new StringJoiner(System.lineSeparator());
         expected.add("");
-        expected.add(" The list of all items: ");
+        expected.add(" Find items by name ... ");
 
-        StubInput input = new StubInput(new String[] {""});
+        StubInput input = new StubInput(new String[] {"test"});
         Tracker tracker = new Tracker();
         for (int index = 1; index <= 3; index++) {
-            Item item = new Item("test" + index);
+            Item item = new Item("test");
             tracker.add(item);
             expected.add(item.getId() + ". " + item.getName());
         }
         expected.add("");
-        UserAction[] actions = {new FindAllAction()};
-        new FindAllAction().execute(input, tracker);
+        UserAction[] actions = {new FindByNameAction()};
+        new FindByNameAction().execute(input, tracker);
 
         assertThat(byteArrayOut.toString(), is(expected.toString()));
 
