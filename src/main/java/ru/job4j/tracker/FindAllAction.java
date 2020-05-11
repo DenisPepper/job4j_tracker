@@ -13,14 +13,9 @@ public class FindAllAction implements UserAction {
     public boolean execute(Input input, Tracker tracker) {
         System.out.println();
         System.out.println(" The list of all items: ");
-        Item[] items = tracker.findAll();
-        if (items.length == 0) {
-            System.out.println("is empty ...");
-        } else {
-            for (Item item : items) {
+            for (Item item : tracker.findAll()) {
                 System.out.println(item.getId() + ". " + item.getName());
             }
-        }
         return true;
     }
 }
