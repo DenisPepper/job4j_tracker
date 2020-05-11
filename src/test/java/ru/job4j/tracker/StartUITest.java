@@ -29,13 +29,13 @@ public class StartUITest {
         StubAction action = new StubAction();
         new StartUI().init(input, new Tracker(), new UserAction[] {action});
 
-        StringJoiner pic = new StringJoiner(System.lineSeparator());
-        pic.add("");
-        pic.add("Menu.");
-        pic.add("0. Stub action");
-        pic.add("");
+        StringJoiner expected = new StringJoiner(System.lineSeparator());
+        expected.add("");
+        expected.add("Menu.");
+        expected.add("0. Stub action");
+        expected.add("");
 
-        assertThat(byteArrayOut.toString(), is(pic.toString()));
+        assertThat(byteArrayOut.toString(), is(expected.toString()));
 
         System.setOut(defaultOut);
     }
