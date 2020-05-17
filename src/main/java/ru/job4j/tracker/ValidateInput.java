@@ -17,6 +17,7 @@ public class ValidateInput extends ConsoleInput {
         return value;
     }
 
+
     @Override
     public int askInt(String question, int max) {
         boolean invalid = true;
