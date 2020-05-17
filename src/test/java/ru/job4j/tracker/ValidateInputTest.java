@@ -8,13 +8,15 @@ import static org.hamcrest.Matchers.is;
 
 public class ValidateInputTest {
 
+
+
     @Test
     public void whenInvalidInput() {
         ByteArrayOutputStream mem = new ByteArrayOutputStream();
         PrintStream out = System.out;
         System.setOut(new PrintStream(mem));
         String[] data = {"text instead of numbers", "1"};
-        ValidateInput input = new ValidateStubInput(data);
+        ValidateInput input = new ValidateInput(new StubInput(data));
         input.askInt("Enter");
         assertThat(
                 mem.toString(),
@@ -30,7 +32,7 @@ public class ValidateInputTest {
         System.setOut(new PrintStream(byteArrayOut));
 
         String[] simulatedInputs = {"5", "1"};
-        ValidateInput input = new ValidateStubInput(simulatedInputs);
+        ValidateInput input = new ValidateInput(new StubInput(simulatedInputs));
         input.askInt("Enter", 5);
 
         assertThat(
