@@ -18,6 +18,12 @@ public class StartUI {
     private void showMenu(List<UserAction> actions) {
         System.out.println();
         System.out.println("Menu.");
+        byte number = 0;
+        for (UserAction action:actions) {
+            System.out.println(number + ". " + action.showMenuHeader());
+            number++;
+        }
+
         for (int index = 0; index < actions.size(); index++) {
             System.out.println(index + ". " + actions.get(index).showMenuHeader());
         }
